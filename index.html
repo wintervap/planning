@@ -23,8 +23,9 @@
 <img src="icon-192.png" alt="">
 <p id="msg">Ouverture du planning…</p>
 <a id="go" href="https://script.google.com/macros/s/AKfycbxVHPVpiwXItSddOlCAHQJdVIsXgKOsKDi6YF4gjVmHzW__Txlt3N4ols0NiTVD-K2uRA/exec">Ouvrir le planning</a>
-<p id="aide" hidden>iPhone : bouton Partager, puis « Sur l'écran d'accueil ».<br>Android : menu ⋮, puis « Ajouter à l'écran d'accueil ».<br>PC (Chrome) : menu ⋮, « Caster, enregistrer et partager », puis « Créer un raccourci ».</p>
+<p id="aide" hidden>iPhone : bouton Partager, puis « Sur l'écran d'accueil ».<br>Android : menu ⋮, puis « Installer l'application » (ou « Ajouter à l'écran d'accueil » → « Installer »).<br>PC (Chrome) : menu ⋮, « Caster, enregistrer et partager », puis « Créer un raccourci ».</p>
 <script>
+  if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(function(){}); }
   // Redirection automatique, sauf si la page vient d'être ouverte pour l'ajouter à l'écran d'accueil (?installer).
   // En mode installation, on retire ?installer de l'adresse pour que le raccourci enregistré redirige bien.
   if (/[?&]installer\b/.test(location.search)) {
